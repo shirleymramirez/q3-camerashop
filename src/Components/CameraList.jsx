@@ -10,7 +10,6 @@ const CameraList = ({ cameras, addToCart, itemsSearch }) => {
                 <SearchBar onItemsSearch={itemsSearch} />
             </div>
             <div>
-                <h2>Camera List</h2>
                 <div className="cameraShelf">
                     {cameras.map(camera=> {
                         return (
