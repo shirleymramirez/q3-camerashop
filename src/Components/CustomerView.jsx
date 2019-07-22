@@ -106,7 +106,6 @@ class CustomerView extends React.Component {
                     itemsSearch={this.searchList}
                     cameras={searchedItem}
                     addToCart={this.addToCart}
-                    search={this.state.search}
                 />
                 <CartItem 
                     cartItems={cartItems}
