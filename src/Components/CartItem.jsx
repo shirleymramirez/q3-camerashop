@@ -5,13 +5,14 @@ const CartItem = ({ cartItems, removeFromCart}) => {
     let totalPrice = 0;
     let tax = 0.086;
     let subTotal = 0;
+    
     const cartItem = cartItems.map((item, i)=> {
         subTotal += item.price * item.inCart;
         totalPrice += subTotal + tax;
         return (
             <div key={i} className="itemsInCart">
                 <p>{item.name}</p>
-                <button onClick={()=>removeFromCart(item.id)}>Delete</button>
+                <i class="fas fa-trash-alt" onClick={() => removeFromCart(item.id)}></i>
             </div>
         )
     })

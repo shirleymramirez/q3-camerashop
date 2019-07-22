@@ -15,7 +15,7 @@ const Navbar = () => {
                         <Link to='/' style={{ padding: '10px' }} className="routerLink">Components</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='https://github.com/shirleymramirez/q3-camerashop' className="routerLink">Github</Link>
+                        <Link to='/' className="routerLink">Github</Link>
                     </li>
                 </ul>
             </nav>

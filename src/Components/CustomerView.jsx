@@ -1,7 +1,7 @@
 import React from "react";
 import CameraList from './CameraList';
 import CartItem from './CartItem';
-import '../index.css'
+import '../index.css';
 
 class CustomerView extends React.Component {
     state = {
@@ -27,28 +27,56 @@ class CustomerView extends React.Component {
         })
     }
 
-    addToCart = (id) => {
-        this.setState(prevState => {
-            return {
-                cameras: prevState.cameras.map(camera=> {
-                    return {
-                        ...camera,
-                        inCart: camera.id === id ? camera.inCart + 1 : camera.inCart
-                    }
-                })
+    addToCart = async (id) => {
+        const response = await fetch(`http://localhost:8000/cameras/${id}`, {
+            method: "PATCH",
+            body: JSON.stringify({
+                inCart: true
+            }),
+            headers: {
+                'Content-Type': 'application/json'
             }
-        })
-    }
+        });
 
-    removeFromCart = (id) => {
-        this.setState({
-            cameras: this.state.cameras.map(camera=> {
+        if(!response.ok) {
+            throw new Error();
+        } else {
+            this.setState(prevState => {
                 return {
-                    ...camera,
-                    inCart: camera.id === id ? camera.inCart = 0: camera.inCart
+                    cameras: prevState.cameras.map(camera=> {
+                        return {
+                            ...camera,
+                            inCart: camera.id === id ? camera.inCart + 1 : camera.inCart
+                        }
+                    })
                 }
             })
-        })
+        }
+    }
+
+    removeFromCart = async (id) => {
+        const response = await fetch(`http://localhost:8000/cameras/${id}`, {
+            method: "PATCH",
+            body: JSON.stringify({
+                inCart: false
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error();
+        } else {
+            this.setState({
+                cameras: this.state.cameras.map(camera=> {
+                    return {
+                        ...camera,
+                        inCart: camera.id === id ? camera.inCart = 0: camera.inCart
+                    }
+                })
+            })
+        }
     }
 
     searchList = str => {

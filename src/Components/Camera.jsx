@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactStars from 'react-stars'
 
 const Camera = ({ id, name, price, picture, rating, inCart, onSale, addToCart }) => {
     const clickHandler = () => {
@@ -8,11 +9,10 @@ const Camera = ({ id, name, price, picture, rating, inCart, onSale, addToCart })
         <div className="card-body cameraContainer">
             <div>
                 <h1 className="card-title">{name}</h1>
-                <img src={picture} alt={name} style={{ height: '20em', width: '20em'}}></img>
+                <img src={picture} alt={"picture of " + name} style={{ height: '20em', width: '20em'}}></img>
                 <h4>${price}</h4>
                 <p style={{color:'red'}}>{onSale === true ? 'On SALE!' : '' }</p>
-                <p>Rating: {rating}</p>
-                {/* for star icon */}
+                <p>Rating: <ReactStars count={5} value={rating} /></p>
             </div>
             <div className="addToCartButton">
                 <button onClick={clickHandler} value={id}>ADD TO CART</button>
