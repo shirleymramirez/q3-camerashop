@@ -12,3 +12,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.cameraList {
+  display: flex;
+  text-align: center;
+}
+
+.cameraShelf {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 65vw;
+}
+
+.cameraContainer {
+  box-shadow:
+          0pt 2px 5px rgba(84, 85, 83, 0.7),
+          0px 0px 8px 5px rgba(124, 148, 124, 0.4) inset;
+      border-radius: 5px;
+      background: rgb(247, 247, 247);
+      text-align: left;
+      width: 25rem;
+      padding: 1em;
+      margin: 1em;
+}
+
+.searchField {
+  border-radius: 5px;
+  width: 25em;
+  margin-top: 10px;
+}
+
+.itemsInCart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.shoppingCart {
+  box-shadow:
+          0pt 2px 5px rgba(84, 85, 83, 0.7),
+          0px 0px 8px 5px rgba(124, 148, 124, 0.4) inset;
+      border-radius: 5px;
+      background: rgb(247, 247, 247);
+      text-align: left;
+      width: 50rem;
+      padding: 1em;
+      margin: 1em;
+      height: 50rem;
+}
+
+.checkOutButton {
+  width: 27rem;
+  background-color: wheat;
+  padding: 15px;
+}
