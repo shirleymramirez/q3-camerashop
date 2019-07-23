@@ -6,16 +6,19 @@ const Camera = ({ id, name, price, picture, rating, onSale, addToCart }) => {
         addToCart(id);
     }
     return (
-        <div className="card-body cameraContainer">
+        <div className="cameraContainer">
             <div>
-                <h2 className="card-title">Camera Name: {name}</h2>
-                <img src={picture} alt={"picture of " + name} style={{ height: '20em', width: '20em'}}></img>
-                <h4>${price}</h4>
+                <h4 style={{ color: 'rgb(3, 94, 68)'}}>Camera Name: {name}</h4>
+                <img src={picture} alt={"picture of " + name} style={{ width: '20em'}}></img>
+                <h5>${price}</h5>
                 <p style={{color:'red'}}>{onSale ? 'On SALE!' : '' }</p>
-                <p>Rating: <ReactStars count={5} value={rating} edit={false} /></p>
+                <div className="starRating"> 
+                    <p> Rating: </p>  
+                    <ReactStars count={5} value={rating} edit={false} />
+                </div>
             </div>
             <div className="addToCartButton">
-                <button onClick={clickHandler} value={id}>ADD TO CART</button>
+                <button onClick={clickHandler} value={id} className="cameraButton">ADD TO CART</button>
             </div>
         </div>
     )

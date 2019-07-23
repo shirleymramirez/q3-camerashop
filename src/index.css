@@ -24,15 +24,16 @@ code {
   flex-direction: row;
   flex-wrap: wrap;
   width: 65vw;
+  justify-content: center;
 }
 
 .cameraContainer {
   box-shadow:
           0pt 2px 5px rgba(84, 85, 83, 0.7),
-          0px 0px 8px 5px rgba(124, 148, 124, 0.4) inset;
+        0px 0px 8px 5px rgba(124, 148, 124, 0.4) inset;
       border-radius: 5px;
       background: rgb(247, 247, 247);
-      text-align: left;
+      text-align: center;
       width: 25rem;
       padding: 1em;
       margin: 1em;
@@ -44,28 +45,65 @@ code {
   margin-top: 10px;
 }
 
+.shoppingCart {
+  text-align: center;
+  margin-top: 1em;
+  color: rgb(3, 94, 68);
+}
+
 .itemsInCart {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
-}
-
-.shoppingCart {
-  box-shadow:
-          0pt 2px 5px rgba(84, 85, 83, 0.7),
-          0px 0px 8px 5px rgba(124, 148, 124, 0.4) inset;
-      border-radius: 5px;
-      background: rgb(247, 247, 247);
-      text-align: left;
-      width: 50rem;
-      padding: 1em;
-      margin: 1em;
-      height: 50rem;
+  justify-content: space-between;
 }
 
 .checkOutButton {
   width: 27rem;
-  background-color: wheat;
+  box-shadow:
+        0pt 2px 5px rgba(2, 78, 21, 0.7),
+        0px 0px 8px 5px rgba(20, 41, 24, 0.4) inset;
+  background-color: rgb(3, 94, 68);
   padding: 15px;
+  color: white;
+  border-radius: 5px;
+}
+
+.fa-trash-alt {
+  color: red;
+}
+
+.cameraButton {
+  box-shadow:
+        0pt 2px 5px rgba(2, 78, 21, 0.7),
+        0px 0px 8px 5px rgba(20, 41, 24, 0.4) inset;
+  background-color: rgb(3, 94, 68);
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+.starRating {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.navbar, .footer {
+    background-color: rgb(3, 94, 68);
+}
+
+.logo,
+.footer,
+.routerLink {
+    background:
+        -webkit-repeating-linear-gradient(-45deg,
+        rgb(53, 231, 127),
+        rgb(6, 184, 125) 20px,
+        rgb(225, 240, 231) 20px,
+        rgb(82, 243, 67) 40px,
+        rgb(237, 240, 235) 40px);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }

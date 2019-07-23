@@ -16,9 +16,9 @@ const CartItem = ({ cartItems, removeFromCart}) => {
         )
     })
     return (
-        <div className="shoppingCart">
-            <h2 style={{ textAlign: "center", marginTop: '1em' }}>Shopping Cart</h2>
-            <div className="table table-hover">
+        <div>
+            <h2 className="shoppingCart">Shopping Cart</h2>
+            <div>
                 {cartItem}
                 <p>Subtotal: ${subTotal.toFixed(2)}</p>
                 <p>Tax: ${(totalPrice * tax).toFixed(2)}</p>
